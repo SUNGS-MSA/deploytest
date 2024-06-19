@@ -1,0 +1,63 @@
+#공통환경변수 ---------------------
+
+#현재 프로파일(default), 이것은 java실행시 Arg를 변경해 주면, 여기에 선언된 spring.profiles.active 값은 실행시 Arg값으로 대체된다. 
+##ex) $ java –jar sample-application.jar –Dspring.profiles.active=dev  //--> 이렇게실행시 아래 local 은 dev로 대체되어 실행됨
+spring:
+  profiles:
+    active: 'local'
+
+
+--- #로컬환경변수
+spring:
+  config:
+   activate:
+    on-profile: 'local'
+
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+    
+
+logging:
+  level:
+    root: 'info' 
+
+    
+    
+--- #개발환경변수
+spring:
+  config:
+    activate:
+      on-profile: 'dev'
+
+
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+    
+
+
+logging:
+  level:
+    root: 'info' 
+
+    
+--- #운영환경변수
+spring:
+  config:
+    activate:
+      on-profile: 'prod'
+            
+server:
+  port: 80
+  tomcat:
+    uri-encoding: UTF-8      
+      
+
+logging:
+  level:
+    root: 'info' 
+
