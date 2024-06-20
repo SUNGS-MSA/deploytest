@@ -25,3 +25,7 @@ JAR_NAME=$(ls $REPOSITORY/deploytest |grep 'deploytest' | grep -v 'plain' | tail
 echo "### Source file Name: $JAR_NAME ###"
 
 nohup java -jar $REPOSITORY/deploytest/$JAR_NAME >> $REPOSITORY/deploytest/nohup.out 2>&1 &     # >>는 내용 이어쓰기, >는 내용 덮어쓰기
+
+
+NEW_PID=$(pgrep -f deploytest)
+echo "## NEW_PID  is  $CURRENT_PID ###"
