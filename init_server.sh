@@ -18,7 +18,9 @@ else
 fi
 echo "### Ready to deploy ###"
 
-JAR_NAME=$(ls $REPOSITORY/deploytest |grep 'deploytest' | tail -n 1)
+#JAR_NAME=$(ls $REPOSITORY/deploytest |grep 'deploytest' | tail -n 1)
+JAR_NAME=$(ls $REPOSITORY/deploytest |grep 'deploytest' | grep -v 'plain' | tail -n 1) #plain jar는 제외
+
 
 echo "### Source file Name: $JAR_NAME ###"
 
