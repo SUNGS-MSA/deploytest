@@ -28,4 +28,4 @@ nohup java -jar $REPOSITORY/deploytest/$JAR_NAME >> $REPOSITORY/deploytest/nohup
 
 
 NEW_PID=$(pgrep -f deploytest)
-echo "## NEW_PID  is  $CURRENT_PID ###"
+echo "## NEW_PID  is  $NEW_PID ###"
