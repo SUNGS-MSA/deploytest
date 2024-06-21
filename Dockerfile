@@ -1,5 +1,6 @@
-# openjdk8을 기반 이미지로 설정
-FROM openjdk:8-jdk-alpine
+# openjdk을 기반 이미지로 설정
+#FROM openjdk:8-jdk-alpine
+FROM openjdk:17
 
 #도커파일애서 gradle로 jar파일 생성도 하고 싶을 경우
 #CMD ["./gradlew", "clean", "bootJar"]
