@@ -9,7 +9,10 @@ FROM openjdk:17
 WORKDIR /app
 
 # build시 사용되는 변수 설정
-ARG JAR_FILE_PATH=build/libs/*.jar
+#ARG JAR_FILE_PATH=build/libs/*.jar  #*로 표현하지 않앋. build 자꾸 plain형식의 jar도 같이 생겨서
+ARG JAR_FILE_PATH=build/libs/deploytest-0.0.1-SNAPSHOT.jar
+
+
 
 # 컨테이너에 파일 복사
 COPY ${JAR_FILE_PATH} app.jar
